@@ -1,0 +1,136 @@
+{
+  "nav": {
+    "local": "El Salvador",
+    "international": "Internacional",
+    "contact": "Contactar",
+    "languageLabel": "Idioma"
+  },
+  "hero": {
+    "badge": "Tu agencia de viajes en El Salvador",
+    "descriptionLine1": "Descubre destinos increíbles desde El Salvador hacia el mundo.",
+    "descriptionLine2": "Playas paradisíacas, aventuras y momentos inolvidables te esperan.",
+    "planTrip": "Planifica tu viaje",
+    "exploreDestinations": "Explorar destinos",
+    "stats": {
+      "trips": "Viajes realizados",
+      "destinations": "Destinos",
+      "happyClients": "Clientes felices"
+    }
+  },
+  "localDestinations": {
+    "badge": "Destinos locales",
+    "titlePrefix": "Descubre",
+    "descriptionLine1": "Explora las maravillas naturales y culturales de nuestro hermoso país.",
+    "descriptionLine2": "Playas de clase mundial, montañas imponentes y pueblos llenos de historia.",
+    "surfCity": {
+      "location": "La Libertad",
+      "description": "Las mejores olas de Centroamérica te esperan. Playas de El Tunco, El Sunzal y Punta Roca para surfistas de todos los niveles.",
+      "price": "Desde $45",
+      "duration": "1-3 días"
+    },
+    "rutaFlores": {
+      "location": "Ahuachapán - Sonsonate",
+      "description": "Pueblos coloridos, café de altura, gastronomía típica y cascadas escondidas. Una experiencia cultural única en El Salvador.",
+      "price": "Desde $55",
+      "duration": "1-2 días"
+    },
+    "volcanes": {
+      "location": "Santa Ana - San Salvador",
+      "description": "Conquista el volcán Santa Ana con su impresionante laguna de color turquesa, o explora el místico volcán de Izalco.",
+      "price": "Desde $35",
+      "duration": "1 día"
+    }
+  },
+  "internationalDestinations": {
+    "badge": "Destinos internacionales",
+    "titlePrefix": "Mundo Travel",
+    "titleHighlight": "sin fronteras",
+    "descriptionLine1": "Cruza fronteras y vive experiencias únicas alrededor del mundo.",
+    "descriptionLine2": "Desde el Caribe hasta Europa, hacemos tu sueño de viajar realidad.",
+    "europa": {
+      "location": "España, Italia, Francia",
+      "description": "Recorre las ciudades más emblemáticas de Europa. Barcelona, Roma, París y más destinos te esperan con su historia y cultura.",
+      "price": "Desde $1,899",
+      "duration": "10-15 días"
+    },
+    "roatan": {
+      "location": "Honduras",
+      "description": "Aguas cristalinas del Caribe, el segundo arrecife de coral más grande del mundo y playas de ensueño a pocas horas de vuelo.",
+      "price": "Desde $450",
+      "duration": "4-7 días"
+    },
+    "disney": {
+      "location": "Orlando, Florida",
+      "description": "El lugar más mágico del mundo. Vive la experiencia Disney con tu familia en los parques temáticos más famosos del planeta.",
+      "price": "Desde $1,299",
+      "duration": "5-8 días"
+    }
+  },
+  "destinationCard": {
+    "seeMore": "Ver más"
+  },
+  "contactForm": {
+    "badge": "Contáctanos",
+    "titlePrefix": "Planifica tu",
+    "titleHighlight": "próximo viaje",
+    "description": "Déjanos tus datos y uno de nuestros asesores se pondrá en contacto contigo para crear el viaje perfecto.",
+    "cardTitle": "Formulario de contacto",
+    "cardDescription": "Completa los campos y te responderemos en menos de 24 horas.",
+    "nameLabel": "Nombre completo *",
+    "namePlaceholder": "Juan Pérez",
+    "emailLabel": "Correo electrónico *",
+    "emailPlaceholder": "juan@ejemplo.com",
+    "phoneLabel": "Teléfono *",
+    "phonePlaceholder": "+503 7000-0000",
+    "destinationLabel": "Destino de interés *",
+    "destinationPlaceholder": "Selecciona un destino",
+    "checkInLabel": "Fecha de salida",
+    "checkOutLabel": "Fecha de regreso",
+    "messageLabel": "Mensaje adicional (opcional)",
+    "messagePlaceholder": "Cuéntanos más sobre tu viaje ideal...",
+    "submitLoading": "Enviando...",
+    "submitDefault": "Enviar solicitud",
+    "successTitle": "¡Mensaje enviado!",
+    "successDescription": "Te contactaremos pronto para planificar tu viaje.",
+    "errorTitle": "Error al enviar",
+    "genericError": "No se pudo enviar el formulario. Por favor, intenta de nuevo.",
+    "zod": {
+      "nameMin": "El nombre debe tener al menos 2 caracteres",
+      "nameMax": "El nombre no puede exceder 100 caracteres",
+      "emailInvalid": "Ingresa un correo electrónico válido",
+      "emailMax": "El correo no puede exceder 255 caracteres",
+      "phoneMin": "El teléfono debe tener al menos 8 dígitos",
+      "phoneMax": "El teléfono no puede exceder 20 caracteres",
+      "phoneFormat": "Formato de teléfono inválido",
+      "destinationRequired": "Selecciona un destino de interés",
+      "messageMax": "El mensaje no puede exceder 1000 caracteres"
+    },
+    "emailDefaults": {
+      "checkIn": "No especificado",
+      "checkOut": "No especificado",
+      "message": "Sin mensaje adicional"
+    },
+    "destinations": {
+      "surfCity": "Surf City - La Libertad",
+      "rutaFlores": "Ruta de las Flores",
+      "volcanes": "Volcanes de El Salvador",
+      "europa": "Europa Mágica",
+      "roatan": "Roatán Paradise",
+      "disney": "Disney World",
+      "other": "Otro destino"
+    }
+  },
+  "footer": {
+    "description": "Tu agencia de viajes en El Salvador. Desde 2015 haciendo realidad los sueños de viaje de miles de salvadoreños.",
+    "popularDestinations": "Destinos populares",
+    "contact": "Contacto",
+    "address": "Col. Escalón, San Salvador, El Salvador",
+    "copyright": "Todos los derechos reservados.",
+    "terms": "Términos y condiciones",
+    "privacy": "Política de privacidad"
+  },
+  "whatsapp": {
+    "ariaLabel": "Contactar por WhatsApp",
+    "defaultMessage": "¡Hola! Me interesa obtener información sobre los paquetes de viaje de Mundo Travel."
+  }
+}

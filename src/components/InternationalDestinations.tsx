@@ -1,5 +1,6 @@
 import DestinationCard from "./DestinationCard";
 import { Globe, Plane, Castle, Sparkles } from "lucide-react";
+import { useI18n } from "@/i18n/I18nContext";
 
 interface InternationalDestinationsProps {
   onDestinationSelect: (destination: string) => void;
@@ -9,36 +10,38 @@ const destinations = [
   {
     id: "europa",
     title: "Europa Mágica",
-    location: "España, Italia, Francia",
-    description: "Recorre las ciudades más emblemáticas de Europa. Barcelona, Roma, París y más destinos te esperan con su historia y cultura.",
+    locationKey: "internationalDestinations.europa.location",
+    descriptionKey: "internationalDestinations.europa.description",
     image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&auto=format&fit=crop&q=80",
-    price: "Desde $1,899",
-    duration: "10-15 días",
+    priceKey: "internationalDestinations.europa.price",
+    durationKey: "internationalDestinations.europa.duration",
     icon: Castle,
   },
   {
     id: "roatan",
     title: "Roatán Paradise",
-    location: "Honduras",
-    description: "Aguas cristalinas del Caribe, el segundo arrecife de coral más grande del mundo y playas de ensueño a pocas horas de vuelo.",
+    locationKey: "internationalDestinations.roatan.location",
+    descriptionKey: "internationalDestinations.roatan.description",
     image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&auto=format&fit=crop&q=80",
-    price: "Desde $450",
-    duration: "4-7 días",
+    priceKey: "internationalDestinations.roatan.price",
+    durationKey: "internationalDestinations.roatan.duration",
     icon: Globe,
   },
   {
     id: "disney",
     title: "Disney World",
-    location: "Orlando, Florida",
-    description: "El lugar más mágico del mundo. Vive la experiencia Disney con tu familia en los parques temáticos más famosos del planeta.",
+    locationKey: "internationalDestinations.disney.location",
+    descriptionKey: "internationalDestinations.disney.description",
     image: "https://images.unsplash.com/photo-1597466599360-3b9775841aec?w=800&auto=format&fit=crop&q=80",
-    price: "Desde $1,299",
-    duration: "5-8 días",
+    priceKey: "internationalDestinations.disney.price",
+    durationKey: "internationalDestinations.disney.duration",
     icon: Sparkles,
   },
 ];
 
 const InternationalDestinations = ({ onDestinationSelect }: InternationalDestinationsProps) => {
+  const { t } = useI18n();
+
   return (
     <section id="destinos-internacionales" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -46,17 +49,19 @@ const InternationalDestinations = ({ onDestinationSelect }: InternationalDestina
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-4">
             <Plane className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium text-accent">Destinos internacionales</span>
+            <span className="text-sm font-medium text-accent">
+              {t("internationalDestinations.badge")}
+            </span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-bold font-display mb-4">
-            Mundo Travel{" "}
-            <span className="text-gradient-sunset">sin fronteras</span>
+            {t("internationalDestinations.titlePrefix")}{" "}
+            <span className="text-gradient-sunset">{t("internationalDestinations.titleHighlight")}</span>
           </h2>
-          
+
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Cruza fronteras y vive experiencias únicas alrededor del mundo. 
-            Desde el Caribe hasta Europa, hacemos tu sueño de viajar realidad.
+            {t("internationalDestinations.descriptionLine1")}{" "}
+            {t("internationalDestinations.descriptionLine2")}
           </p>
         </div>
 
@@ -66,11 +71,11 @@ const InternationalDestinations = ({ onDestinationSelect }: InternationalDestina
             <DestinationCard
               key={destination.id}
               title={destination.title}
-              location={destination.location}
-              description={destination.description}
+              location={t(destination.locationKey)}
+              description={t(destination.descriptionKey)}
               image={destination.image}
-              price={destination.price}
-              duration={destination.duration}
+              price={t(destination.priceKey)}
+              duration={t(destination.durationKey)}
               onSelect={() => onDestinationSelect(destination.title)}
             />
           ))}

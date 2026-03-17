@@ -1,9 +1,15 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Plane, Menu, X } from "lucide-react";
+import { useI18n } from "@/i18n/I18nContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, setLanguage, t } = useI18n();
+
+  const toggleLanguage = () => {
+    setLanguage(language === "en" ? "es" : "en");
+  };
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -26,24 +32,33 @@ const Navbar = () => {
           </a>
 
           {/* Desktop menu */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-4">
             <button
               onClick={() => scrollTo("destinos-locales")}
               className="text-muted-foreground hover:text-primary transition-colors font-medium"
             >
-              El Salvador
+              {t("nav.local")}
             </button>
             <button
               onClick={() => scrollTo("destinos-internacionales")}
               className="text-muted-foreground hover:text-primary transition-colors font-medium"
             >
-              Internacional
+              {t("nav.international")}
             </button>
             <Button
               onClick={() => scrollTo("contacto")}
               className="gradient-ocean text-primary-foreground hover:opacity-90"
             >
-              Contactar
+              {t("nav.contact")}
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="ml-2"
+              onClick={toggleLanguage}
+              aria-label={t("nav.languageLabel")}
+            >
+              {language.toUpperCase()}
             </Button>
           </div>
 
@@ -65,19 +80,27 @@ const Navbar = () => {
                 onClick={() => scrollTo("destinos-locales")}
                 className="text-left text-muted-foreground hover:text-primary transition-colors font-medium py-2"
               >
-                El Salvador
+                {t("nav.local")}
               </button>
               <button
                 onClick={() => scrollTo("destinos-internacionales")}
                 className="text-left text-muted-foreground hover:text-primary transition-colors font-medium py-2"
               >
-                Internacional
+                {t("nav.international")}
               </button>
               <Button
                 onClick={() => scrollTo("contacto")}
                 className="gradient-ocean text-primary-foreground hover:opacity-90 w-full"
               >
-                Contactar
+                {t("nav.contact")}
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={toggleLanguage}
+                aria-label={t("nav.languageLabel")}
+              >
+                {language.toUpperCase()}
               </Button>
             </div>
           </div>

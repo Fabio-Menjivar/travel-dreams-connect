@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Plane, MapPin, Sun } from "lucide-react";
+import { useI18n } from "@/i18n/I18nContext";
 
 interface HeroSectionProps {
   onContactClick: () => void;
 }
 
 const HeroSection = ({ onContactClick }: HeroSectionProps) => {
+  const { t } = useI18n();
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden gradient-hero">
       {/* Background decorative elements */}
@@ -39,7 +42,7 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
             <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
             <span className="text-sm font-medium text-primary">
-              Tu agencia de viajes en El Salvador
+              {t("hero.badge")}
             </span>
           </div>
 
@@ -50,8 +53,8 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            Descubre destinos increíbles desde El Salvador hacia el mundo. 
-            Playas paradisíacas, aventuras y momentos inolvidables te esperan.
+            {t("hero.descriptionLine1")}{" "}
+            {t("hero.descriptionLine2")}
           </p>
 
           {/* CTA Buttons */}
@@ -62,7 +65,7 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
               onClick={onContactClick}
             >
               <MapPin className="w-5 h-5 mr-2" />
-              Planifica tu viaje
+              {t("hero.planTrip")}
             </Button>
             <Button
               size="lg"
@@ -71,7 +74,7 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
               onClick={() => document.getElementById('destinos-locales')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Sun className="w-5 h-5 mr-2" />
-              Explorar destinos
+              {t("hero.exploreDestinations")}
             </Button>
           </div>
 
@@ -79,15 +82,15 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
           <div className="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-1">500+</div>
-              <div className="text-sm text-muted-foreground">Viajes realizados</div>
+              <div className="text-sm text-muted-foreground">{t("hero.stats.trips")}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-accent mb-1">50+</div>
-              <div className="text-sm text-muted-foreground">Destinos</div>
+              <div className="text-sm text-muted-foreground">{t("hero.stats.destinations")}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-secondary mb-1">98%</div>
-              <div className="text-sm text-muted-foreground">Clientes felices</div>
+              <div className="text-sm text-muted-foreground">{t("hero.stats.happyClients")}</div>
             </div>
           </div>
         </div>

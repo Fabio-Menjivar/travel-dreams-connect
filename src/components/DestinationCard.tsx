@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Calendar, ArrowRight } from "lucide-react";
+import { useI18n } from "@/i18n/I18nContext";
 
 interface DestinationCardProps {
   title: string;
@@ -21,6 +22,8 @@ const DestinationCard = ({
   duration,
   onSelect,
 }: DestinationCardProps) => {
+  const { t } = useI18n();
+
   return (
     <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card">
       {/* Image container */}
@@ -69,7 +72,7 @@ const DestinationCard = ({
             className="text-primary hover:text-primary hover:bg-primary/10 ml-auto group/btn"
             onClick={onSelect}
           >
-            Ver más
+            {t("destinationCard.seeMore")}
             <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
           </Button>
         </div>

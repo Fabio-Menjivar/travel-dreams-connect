@@ -1,6 +1,9 @@
 import { Plane, MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import { useI18n } from "@/i18n/I18nContext";
 
 const Footer = () => {
+  const { t } = useI18n();
+
   return (
     <footer className="bg-foreground text-background py-16">
       <div className="container mx-auto px-4">
@@ -14,7 +17,7 @@ const Footer = () => {
               <span className="text-2xl font-bold font-display">Mundo Travel</span>
             </div>
             <p className="text-background/70 mb-6 max-w-md">
-              Tu agencia de viajes en El Salvador. Desde 2015 haciendo realidad los sueños de viaje de miles de salvadoreños.
+              {t("footer.description")}
             </p>
             <div className="flex gap-4">
               <a
@@ -36,7 +39,7 @@ const Footer = () => {
 
           {/* Destinos */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Destinos populares</h4>
+            <h4 className="font-bold text-lg mb-4">{t("footer.popularDestinations")}</h4>
             <ul className="space-y-3 text-background/70">
               <li>
                 <a href="#destinos-locales" className="hover:text-primary transition-colors flex items-center gap-2">
@@ -67,7 +70,7 @@ const Footer = () => {
 
           {/* Contacto */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Contacto</h4>
+            <h4 className="font-bold text-lg mb-4">{t("footer.contact")}</h4>
             <ul className="space-y-3 text-background/70">
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-primary" />
@@ -79,7 +82,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-primary mt-1" />
-                <span>Col. Escalón, San Salvador, El Salvador</span>
+                <span>{t("footer.address")}</span>
               </li>
             </ul>
           </div>
@@ -88,14 +91,14 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="border-t border-background/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-background/50 text-sm">
-            © {new Date().getFullYear()} Mundo Travel. Todos los derechos reservados.
+            © {new Date().getFullYear()} Mundo Travel. {t("footer.copyright")}
           </p>
           <div className="flex gap-6 text-sm text-background/50">
             <a href="#" className="hover:text-primary transition-colors">
-              Términos y condiciones
+              {t("footer.terms")}
             </a>
             <a href="#" className="hover:text-primary transition-colors">
-              Política de privacidad
+              {t("footer.privacy")}
             </a>
           </div>
         </div>
